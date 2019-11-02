@@ -332,44 +332,44 @@
       
         
           
-            <p>##T1 �����þ�<br>������������</p>
-<center>�����ܿ�����һ��� friends �ء�</center>
-<p align="right">����hja</p>
-������֪��С��ͬѧ�ó����㣬�����ó�������������������������ûʲô��ϵ��С��ͬѧ��������ڶ�̬�滮���о�������ѧ���꣬�Ѿ���������������������е�֪ʶ��С�ж������ֵ������������зǳ����ԣ����������һ�����ӱ�д����һ����?������С��ͬѧϣ���ҵ�һ��С�ڵ���?������ʹ��������ĸ�����λ�ǵ��������ġ����������
-�������ʽ�� һ��һ����?��
-�������ʽ�� һ��һ���������𰸡�
-���������롿233996
-�����������233899
-�����ݹ�ģ��Լ����
-����40%�����ݣ� $$x \leq 10^5$$��
-����60%�����ݣ� $$x \leq 10^9$$��
-����80%�����ݣ� $$x \leq 10^{18}$$��
-����100%�����ݣ�$$0 \leq x \leq 10^{10^5}$$��
+            <p>##T1 增量幻境<br>【问题描述】</p>
+<center>你是能看到第一题的 friends 呢。</center>
+<p align="right">——hja</p>
+众所周知，小葱同学擅长计算，尤其擅长计算组合数，但这个题和组合数没什么关系。小葱同学最近醉心于动态规划的研究，他苦学百年，已经牢牢掌握了最长上升子序列的知识。小葱对于这种单调不减的序列非常着迷，于是他灵机一动，挥笔写下了一个数𝑥，现在小葱同学希望找到一个小于等于𝑥的数，使得这个数的各个数位是单调不减的。求这个数。
+【输入格式】 一行一个数𝑥。
+【输出格式】 一行一个数代表答案。
+【样例输入】233996
+【样例输出】233899
+【数据规模与约定】
+对于40%的数据， $$x \leq 10^5$$。
+对于60%的数据， $$x \leq 10^9$$。
+对于80%的数据， $$x \leq 10^{18}$$。
+对于100%的数据，$$0 \leq x \leq 10^{10^5}$$。
 
 <hr>
-<p>ǩ���⣬��<br>˼·�ȽϺ��룬������ô��Ҫ���ַ��洢��<br>���Դӵ�һλ���ɨ��<br>ֱ��ɨ��һλ��ǰһλС�� $$a[i] &lt; a[i - 1]$$<br>��¼��һλΪcnt<br>Ȼ���cnt��ǰɨ<br>ֱ���ٴ�ɨ���Ⱥ�һλС�� $$a[i] &lt; a[i + 1]$$<br>��¼��һλΪp<br>����p+1λ��ȥ1 Ҫʹ����������������β��Ӧȫ��Ϊ9<br>��� Over<br>#Code:</p>
+<p>签到题，，<br>思路比较好想，数字这么大要用字符存储。<br>可以从第一位向后扫，<br>直到扫到一位比前一位小的 $$a[i] &lt; a[i - 1]$$<br>记录这一位为cnt<br>然后从cnt往前扫<br>直到再次扫到比后一位小的 $$a[i] &lt; a[i + 1]$$<br>记录这一位为p<br>将第p+1位减去1 要使数字最大不难想出后面尾数应全部为9<br>输出 Over<br>#Code:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> cnt=<span class="number">0x7fffffff</span>,num;</span><br><span class="line"><span class="keyword">char</span> a[maxn];</span><br><span class="line"><span class="keyword">int</span> f[maxn];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>&#123;freopen(<span class="string">"increase.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>),freopen(<span class="string">"increase.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123; hello();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line">	<span class="keyword">int</span> l=<span class="built_in">strlen</span>(a);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;l;i++) f[i]=a[i]-<span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;l;i++) <span class="keyword">if</span>(f[i]&lt;f[i<span class="number">-1</span>])&#123;cnt=i;<span class="keyword">break</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span>(cnt==<span class="number">0x7fffffff</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;l;i++)<span class="built_in">cout</span>&lt;&lt;f[i];</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=cnt<span class="number">-1</span>;i&gt;<span class="number">0</span>;i--)<span class="keyword">if</span>(f[i]&gt;f[i<span class="number">-1</span>])&#123;f[i]-=<span class="number">1</span>;num=i;<span class="keyword">break</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span>(num==<span class="number">0</span>)f[num]--;<span class="keyword">int</span> start=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(f[start]==<span class="number">0</span>)start++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=start;i&lt;=num;i++)<span class="built_in">printf</span>(<span class="string">"%d"</span>,f[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=num+<span class="number">1</span>;i&lt;l;i++)<span class="built_in">printf</span>(<span class="string">"9"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>##�˻����<br>������������</p>
-<center>�����ܿ����ڶ���� friends �ء�</center>
-<p align="right">����aoao</p>
-������֪��С��ͬѧ�ó����㣬�����ó�������������������������ûʲô��ϵ��С��ͬѧ����ѧϰ�˷��ͼӷ�������С��ͬѧ��ʶ����������Ϊ���˼ӷ��ͳ˷������ܹ�����1 + 1 = 2��1 �� 1 = 1���ָ�������⡣����С�и���?����?1, ?2, ? , ??��������ʽ�ӵ�ֵ��
+<p>##乘积求和<br>【问题描述】</p>
+<center>你是能看到第二题的 friends 呢。</center>
+<p align="right">——aoao</p>
+众所周知，小葱同学擅长计算，尤其擅长计算组合数，但这个题和组合数没什么关系。小葱同学自幼学习乘法和加法，并且小葱同学意识到，正是因为有了加法和乘法，才能够计算1 + 1 = 2和1 × 1 = 1这种高深的问题。现在小葱给你𝑁个数𝑎1, 𝑎2, ⋯ , 𝑎𝑁，求下列式子的值：
 $$\sum_ {l=1}^N $$ 
-�������ʽ��
-��һ��һ����?��
-������һ��?��������?1, ?2, ? , ??��
-�������ʽ��
-һ��һ���������𰸶�1012 + 7ȡģ֮��Ľ����
-���������롿
+【输入格式】
+第一行一个数𝑁。
+接下来一行𝑁个数代表𝑎1, 𝑎2, ⋯ , 𝑎𝑁。
+【输出格式】
+一行一个数代表答案对1012 + 7取模之后的结果。
+【样例输入】
 5 3
 2 1 5 4
-�����������
+【样例输出】
 125
-�����ݹ�ģ��Լ����
-����40%�����ݣ� $$N \leq 50$$��
-����60%�����ݣ� $$N \leq 100$$��
-����80%�����ݣ� $$N \leq 1000$$��
-����90%�����ݣ� $$1 \leq a[i] \leq 10^5 $$��
-����100%�����ݣ�$$N \leq 4 \times 10^5,1 \leq a[i] \leq 10^{12}$$��
+【数据规模与约定】
+对于40%的数据， $$N \leq 50$$。
+对于60%的数据， $$N \leq 100$$。
+对于80%的数据， $$N \leq 1000$$。
+对于90%的数据， $$1 \leq a[i] \leq 10^5 $$。
+对于100%的数据，$$N \leq 4 \times 10^5,1 \leq a[i] \leq 10^{12}$$。
 
 <hr>
 
