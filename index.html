@@ -261,6 +261,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/02/Qbxt%202019.10.27%20day1%E4%B8%8A%E5%8D%88%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhw216">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhw216的九维空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/02/Qbxt%202019.10.27%20day1%E4%B8%8A%E5%8D%88%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url">Qbxt 2019.10.27 day1上午 解题报告</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-02T19:59:33+08:00">
+                2019-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##T1 �����þ�<br>������������</p>
+<center>�����ܿ�����һ��� friends �ء�</center>
+<p align="right">����hja</p>
+������֪��С��ͬѧ�ó����㣬�����ó�������������������������ûʲô��ϵ��С��ͬѧ��������ڶ�̬�滮���о�������ѧ���꣬�Ѿ���������������������е�֪ʶ��С�ж������ֵ������������зǳ����ԣ����������һ�����ӱ�д����һ����?������С��ͬѧϣ���ҵ�һ��С�ڵ���?������ʹ��������ĸ�����λ�ǵ��������ġ����������
+�������ʽ�� һ��һ����?��
+�������ʽ�� һ��һ���������𰸡�
+���������롿233996
+�����������233899
+�����ݹ�ģ��Լ����
+����40%�����ݣ� $$x \leq 10^5$$��
+����60%�����ݣ� $$x \leq 10^9$$��
+����80%�����ݣ� $$x \leq 10^{18}$$��
+����100%�����ݣ�$$0 \leq x \leq 10^{10^5}$$��
+
+<hr>
+<p>ǩ���⣬��<br>˼·�ȽϺ��룬������ô��Ҫ���ַ��洢��<br>���Դӵ�һλ���ɨ��<br>ֱ��ɨ��һλ��ǰһλС�� $$a[i] &lt; a[i - 1]$$<br>��¼��һλΪcnt<br>Ȼ���cnt��ǰɨ<br>ֱ���ٴ�ɨ���Ⱥ�һλС�� $$a[i] &lt; a[i + 1]$$<br>��¼��һλΪp<br>����p+1λ��ȥ1 Ҫʹ����������������β��Ӧȫ��Ϊ9<br>��� Over<br>#Code:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> cnt=<span class="number">0x7fffffff</span>,num;</span><br><span class="line"><span class="keyword">char</span> a[maxn];</span><br><span class="line"><span class="keyword">int</span> f[maxn];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>&#123;freopen(<span class="string">"increase.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>),freopen(<span class="string">"increase.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123; hello();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line">	<span class="keyword">int</span> l=<span class="built_in">strlen</span>(a);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;l;i++) f[i]=a[i]-<span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;l;i++) <span class="keyword">if</span>(f[i]&lt;f[i<span class="number">-1</span>])&#123;cnt=i;<span class="keyword">break</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span>(cnt==<span class="number">0x7fffffff</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;l;i++)<span class="built_in">cout</span>&lt;&lt;f[i];</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=cnt<span class="number">-1</span>;i&gt;<span class="number">0</span>;i--)<span class="keyword">if</span>(f[i]&gt;f[i<span class="number">-1</span>])&#123;f[i]-=<span class="number">1</span>;num=i;<span class="keyword">break</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span>(num==<span class="number">0</span>)f[num]--;<span class="keyword">int</span> start=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(f[start]==<span class="number">0</span>)start++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=start;i&lt;=num;i++)<span class="built_in">printf</span>(<span class="string">"%d"</span>,f[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=num+<span class="number">1</span>;i&lt;l;i++)<span class="built_in">printf</span>(<span class="string">"9"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##�˻����<br>������������</p>
+<center>�����ܿ����ڶ���� friends �ء�</center>
+<p align="right">����aoao</p>
+������֪��С��ͬѧ�ó����㣬�����ó�������������������������ûʲô��ϵ��С��ͬѧ����ѧϰ�˷��ͼӷ�������С��ͬѧ��ʶ����������Ϊ���˼ӷ��ͳ˷������ܹ�����1 + 1 = 2��1 �� 1 = 1���ָ�������⡣����С�и���?����?1, ?2, ? , ??��������ʽ�ӵ�ֵ��
+$$\sum_ {l=1}^N $$ 
+�������ʽ��
+��һ��һ����?��
+������һ��?��������?1, ?2, ? , ??��
+�������ʽ��
+һ��һ���������𰸶�1012 + 7ȡģ֮��Ľ����
+���������롿
+5 3
+2 1 5 4
+�����������
+125
+�����ݹ�ģ��Լ����
+����40%�����ݣ� $$N \leq 50$$��
+����60%�����ݣ� $$N \leq 100$$��
+����80%�����ݣ� $$N \leq 1000$$��
+����90%�����ݣ� $$1 \leq a[i] \leq 10^5 $$��
+����100%�����ݣ�$$N \leq 4 \times 10^5,1 \leq a[i] \leq 10^{12}$$��
+
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/02/FirstDay/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -421,7 +580,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
